@@ -31,7 +31,7 @@ document.getElementById('wind').addEventListener('click',(event)=>{
        document.getElementById('wind').appendChild(container);
     }
        if(event.target.id==="submit"){
-        const prom = fetch(`http://api.weatherapi.com/v1/current.json?key=cb6538f8a8fc4df1be492634250201&q=${place}&aqi=yes`)
+        const prom = fetch(`https://api.weatherapi.com/v1/current.json?key=cb6538f8a8fc4df1be492634250201&q=${place}&aqi=yes`)
         prom
         .then(response=>response.json())
         .then(data=> updateTemp(data));
