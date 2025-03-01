@@ -13,7 +13,7 @@ document.getElementById('wind').addEventListener('click',(event)=>{
 
        const hummi=document.createElement('div');
        hummi.id="hum"
-       hummi.innerHTML=`humidity is ${data.current.humidity}`;
+       hummi.innerHTML=`humidity is ${data.current.humidity}%`;
        document.getElementById('wind').appendChild(hummi); 
        hummi.style.marginTop="5px";
 
