@@ -31,10 +31,16 @@ document.getElementById('wind').addEventListener('click',(event)=>{
        document.getElementById('wind').appendChild(container);
     }
        if(event.target.id==="submit"){
+        document.querySelector('#location').value="";
+        document.getElementById('weatherInfo').innerHTML = ``;
+        if (document.getElementById('yo')) document.getElementById('yo').remove();
+        if (document.getElementById('hum')) document.getElementById('hum').remove();
+        if (document.getElementById('container')) document.getElementById('container').remove();
         const prom = fetch(`https://api.weatherapi.com/v1/current.json?key=cb6538f8a8fc4df1be492634250201&q=${place}&aqi=yes`)
         prom
         .then(response=>response.json())
         .then(data=> updateTemp(data));
+        
     }
     else if(event.target.id==="reset"){
         document.querySelector('#location').value="";
