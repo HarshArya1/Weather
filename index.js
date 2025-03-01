@@ -38,8 +38,12 @@ document.getElementById('wind').addEventListener('click',(event)=>{
         if (document.getElementById('container')) document.getElementById('container').remove();
         const prom = fetch(`https://api.weatherapi.com/v1/current.json?key=cb6538f8a8fc4df1be492634250201&q=${place}&aqi=yes`)
         prom
-        .then(response=>response.json())
-        .then(data=> updateTemp(data));
+        .then(response => response.json())
+        .then(data => updateTemp(data))
+        .catch(error => {
+            console.error('Error fetching the weather data:', error);
+            alert('Unable to fetch weather for that location. Enter City names only');
+        });
         
     }
     else if(event.target.id==="reset"){
