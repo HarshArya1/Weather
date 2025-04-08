@@ -7,13 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="weather-container" id="wind">
+  <div class="weather-container">
     <h1>Weather App</h1>
     <input type="text" id="location" placeholder="Enter location">
     <button id="submit">Get Weather</button>
     <button id="reset">Reset</button>
-    <div id="weatherInfo" class="weather-info"></div>
-    <div id="container"></div>
+    
+    <div id="weatherInfo">
+      <div id="container">
+        <img id="weatherIcon" alt="Weather Icon" style="display: none;">
+        <div id="temp"></div>
+        <div id="city"></div>
+        <div id="condition"></div>
+        <div id="humidity"></div>
+        <div id="speed"></div>
+        <div id="update"></div>
+      </div>
+    </div>
   </div>
 
   <script src="index.js"></script>
