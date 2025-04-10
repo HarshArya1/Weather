@@ -5,7 +5,7 @@ document.getElementById('submit').addEventListener('click', () => {
         const weatherIcon = document.getElementById("weatherIcon");
         weatherIcon.src = data.current.condition.icon;
         weatherIcon.style.display = "block"; 
-        document.getElementById("temp").innerHTML = `${data.current.temp_c} &deg;C`;
+        document.getElementById("temp").innerHTML = `${data.current.temp_c}&deg;C`;
         document.getElementById('city').innerHTML=data.location.name;
         document.getElementById("condition").innerHTML = `Condition: ${data.current.condition.text}`;
         document.getElementById("humidity").innerHTML = `Humidity: ${data.current.humidity}%`;
@@ -41,4 +41,3 @@ document.getElementById('reset').addEventListener('click', () => {
     document.getElementById('speed').innerHTML="";
     document.getElementById('update').innerHTML="";
 });
-
