@@ -41,3 +41,30 @@ document.getElementById('reset').addEventListener('click', () => {
     document.getElementById('speed').innerHTML="";
     document.getElementById('update').innerHTML="";
 });
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     const checkbox = document.getElementById("dark");
+
+//     checkbox.addEventListener("change", () => {
+//         document.body.classList.toggle("darkmode", checkbox.checked);//classList.toggle("darkmode", checkbox.checked) adds the class if checked and removes it if unchecked
+//     });
+// });
+// local save
+document.addEventListener("DOMContentLoaded",()=>{
+    const checkbox=document.getElementById("dark");
+
+    if(localStorage.getItem("darkMode")==="enabled"){
+        document.body.classList.add("darkmode");
+        checkbox.checked=true;
+    }
+    checkbox.addEventListener("change",()=>{
+        if(checkbox.checked){
+            document.body.classList.add("darkmode");
+            localStorage.setItem("darkMode","enabled"); // save the state in local memory
+        }
+        else{
+            document.body.classList.remove("darkmode");
+            localStorage.setItem("darkMode","disabled") // remove the state
+        }
+    })
+})
